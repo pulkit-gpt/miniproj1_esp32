@@ -1,6 +1,6 @@
 from machine import Pin,ADC
 import motor
-import microdot
+from microdot import *
 
 app = Microdot()
 Response.default_content_type = 'text/html'
