@@ -17,3 +17,7 @@ def Backward(val):
     enb.duty_u16(val)
     return
     
+def Stopper():
+    in4.off()
+    in3.off()
+    return

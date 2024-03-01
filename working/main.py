@@ -29,4 +29,9 @@ async def get_pwm(request):
     print("pwm is something like: ", int(motor.enb.duty_u16()))
     return f"Pwm is this {motor.enb.duty_u16()}"
 
+@app.get('/stop')
+async def stop_motor(request):
+    motor.Stopper()
+    return "Motor stopped"
+
 app.run()
