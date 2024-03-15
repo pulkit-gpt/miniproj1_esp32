@@ -1,6 +1,7 @@
 from machine import Pin,ADC
 import motor
 from microdot import *
+import tut
 
 app = Microdot()
 Response.default_content_type = 'text/html'
@@ -33,5 +34,10 @@ async def get_pwm(request):
 async def stop_motor(request):
     motor.Stopper()
     return "Motor stopped"
+
+@app.get('/update')
+async def update_val(request):
+    val=tut.update()
+    return f"{val}"
 
 app.run()
